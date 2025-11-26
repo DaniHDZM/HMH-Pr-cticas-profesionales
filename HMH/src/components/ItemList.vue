@@ -26,9 +26,8 @@ const usuariosFiltrados = computed(() => {
 
         return (
             user.name.toLowerCase().includes(texto) ||
-            user.username.toLowerCase().includes(texto) ||
-            user.website.toLowerCase().includes(texto) ||
-            user.company.name.toLowerCase().includes(texto)
+            user.email.toLowerCase().includes(texto) ||
+            user.phone.toLowerCase().includes(texto)
         )
     })
 })
