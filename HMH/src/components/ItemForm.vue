@@ -26,7 +26,19 @@ const validacionFormulario = () => {
     }
 
     if (Object.keys(errors.value).length === 0) {
+        let listaUsuarios = JSON.parse(sessionStorage.getItem("usuarios")) || []
+
+        listaUsuarios.push({
+            id: Date.now(),
+            nombre: nombre.value,
+            email: email.value,
+            numero: numero.value
+        })
+        sessionStorage.setItem("usuarios", JSON.stringify(listaUsuarios))
         alert("Formulario enviado correctamente")
+        nombre.value = ""
+        email.value = ""
+        numero.value = ""
     }
 }
 
@@ -50,7 +62,7 @@ const validacionFormulario = () => {
         </div>
         <div class="col-md-4">
             <label for="validationCustomUsername" class="form-label">Numero</label>
-            <input v-model="numero" type="number" class="form-control" :class="{ 'is-invalid': errors.numero }" required>
+            <input v-model="numero" type="text" class="form-control" :class="{ 'is-invalid': errors.numero }" required>
             <div class="invalid-feedback">
                 {{ errors.numero }}
             </div>

@@ -6,16 +6,27 @@ const usuarios = ref([])
 const filtro = ref("")
 const cargando = ref(true)
 const error = ref(null)
+const datos = JSON.parse(sessionStorage.getItem("usuarios")) || []
 
 onMounted(async () => {
-  try {
-    const { data } = await axios.get('https://jsonplaceholder.typicode.com/users')
-    usuarios.value = data
-  } catch (err) {
-    error.value = "Fallo de conexión"
-  } finally {
-    cargando.value = false
-  }
+    try {
+        const { data } = await axios.get('https://jsonplaceholder.typicode.com/users')
+        usuarios.value = data
+    } catch (err) {
+        error.value = "Fallo de conexión"
+    } finally {
+        cargando.value = false
+    }
+
+    datos.forEach(u => {
+        usuarios.value.push({
+            id: u.id,
+            name: u.nombre,
+            email: u.email,
+            phone: u.numero
+        })
+    })
+
 })
 
 const usuariosFiltrados = computed(() => {
