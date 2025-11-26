@@ -48,6 +48,8 @@ const usuariosFiltrados = computed(() => {
 <template> 
     <section id="item-list">
 
+        <h1>Lista de usuarios</h1>
+
         <input
             v-model="filtro"
             type="text"
@@ -102,5 +104,17 @@ const usuariosFiltrados = computed(() => {
 
 .encontrado {
     font-weight: bold;
+}
+
+#item-list {
+    margin: 2rem;
+}
+
+.table {
+    border: #000000 2px solid;
+}
+
+.table :hover{
+    background-color: #F1F0EE;
 }
 </style>
