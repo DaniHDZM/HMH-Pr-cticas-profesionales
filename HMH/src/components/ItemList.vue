@@ -57,9 +57,8 @@ const usuariosFiltrados = computed(() => {
             <thead>
                 <tr>
                 <th scope="col">Nombre</th>
-                <th scope="col">Nombre de usuario</th>
-                <th scope="col">Website</th>
-                <th scope="col">Compañia</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Numero</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">
@@ -69,13 +68,10 @@ const usuariosFiltrados = computed(() => {
                     {{ user.name }}
                 </th>
                 <td>
-                    {{ user.username }}
+                    {{ user.email }}
                 </td>
                 <td>
-                    {{ user.website }}
-                </td>
-                <td>
-                    {{ user.company.name }}
+                    {{ user.phone }}
                 </td>
                 </tr>
             </tbody>
