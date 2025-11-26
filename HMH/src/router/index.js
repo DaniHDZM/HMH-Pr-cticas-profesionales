@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import ItemList from '../components/ItemList.vue'
-import ItemForm from '../components/ItemForm.vue'
+import ItemList from '../views/ItemList.vue'
+import ItemForm from '../views/ItemForm.vue'
 
 const routes = [
   { path: '/', component: ItemList },
