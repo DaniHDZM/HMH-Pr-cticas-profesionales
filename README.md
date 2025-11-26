@@ -25,6 +25,8 @@ git clone https://github.com/DaniHDZM/HMH-Pr-cticas-profesionales.git
 
 cd HMH-Pr-cticas-profesionales
 
+cd HMH
+
 npm install
 
 npm run dev
