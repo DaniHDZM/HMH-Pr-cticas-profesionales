@@ -38,22 +38,31 @@ const esRuta = (ruta) => route.path === ruta
     font-family: 'Times New Roman', Times, serif;
     font-size: 24px;
     margin: 0;
+    padding-right: 1rem;
 }
 
-.navbar-nav {
-    cursor: pointer;
-    margin: 1rem;
+nav {
+    background-color: #D3D4D9 !important;
+    border-bottom: 2px solid #9893DA;
+    padding: 0.5rem 1rem;
 }
 
 .nav-link {
-    padding: 5px;
+    padding: 8px 14px;
+    margin-right: 0.5rem;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.activo {
-    font-weight: bold;
+.nav-link:hover {
     background-color: #BBBDF6;
-    border-radius: 1rem;
-    max-width: fit-content;
-    transition: background-color 500ms ease-in-out 200ms;
 }
+
+.nav-link.activo {
+    background-color: #9893DA;
+    color: #fff !important;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
 </style>

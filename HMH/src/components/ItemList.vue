@@ -110,15 +110,12 @@ const usuariosFiltrados = computed(() => {
     margin: 2rem;
 }
 
-.table {
-    border: #000000 2px solid;
-}
-
 .table tbody :hover{
     background-color: #D2D1FF;
 }
 
 .table thead th {
     background-color: #9893DA;
+    color: #ffffff;
 }
 </style>
