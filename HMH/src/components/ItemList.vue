@@ -93,12 +93,12 @@ const usuariosFiltrados = computed(() => {
 
 <style scoped>
 .error {
-    color: #F00B00;
+    color: #ED254E;
     font-weight: bold;
 }
 
 .cargando {
-    color: #6CED58;
+    color: #3AB734;
     font-weight: bold;
 }
 
@@ -114,7 +114,11 @@ const usuariosFiltrados = computed(() => {
     border: #000000 2px solid;
 }
 
-.table :hover{
-    background-color: #F1F0EE;
+.table tbody :hover{
+    background-color: #D2D1FF;
+}
+
+.table thead th {
+    background-color: #9893DA;
 }
 </style>

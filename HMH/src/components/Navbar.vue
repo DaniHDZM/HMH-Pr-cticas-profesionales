@@ -42,14 +42,18 @@ const esRuta = (ruta) => route.path === ruta
 
 .navbar-nav {
     cursor: pointer;
+    margin: 1rem;
 }
 
-.nav-link:hover {
-    color: #00D8F5;
+.nav-link {
+    padding: 5px;
 }
 
 .activo {
-    color: #00D8F5;
     font-weight: bold;
+    background-color: #BBBDF6;
+    border-radius: 1rem;
+    max-width: fit-content;
+    transition: background-color 500ms ease-in-out 200ms;
 }
 </style>

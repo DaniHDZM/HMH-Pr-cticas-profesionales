@@ -5,9 +5,11 @@ const nombre = ref('')
 const email = ref('')
 const numero = ref('')
 const errors = ref({})
+const enviado = ref(false)
 
 const validacionFormulario = () => {
     errors.value = {}
+    enviado.value = false
 
     if (!nombre.value.trim()) {
         errors.value.nombre = "El nombre es obligatorio"
@@ -35,7 +37,7 @@ const validacionFormulario = () => {
             numero: numero.value
         })
         sessionStorage.setItem("usuarios", JSON.stringify(listaUsuarios))
-        alert("Formulario enviado correctamente")
+        enviado.value = true
         nombre.value = ""
         email.value = ""
         numero.value = ""
@@ -47,21 +49,22 @@ const validacionFormulario = () => {
 <template>
     <div id="div-form">
         <h1>Formulario</h1>
+        <p v-if="enviado" class="enviado">Formulario enviado</p>
     
         <form id="formulario" class="row g-3 needs-validation" novalidate @submit.prevent="validacionFormulario">
-            <div >
+            <div class="col-md-6">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                         <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
                     </svg>
                 </span>
                 <label class="form-label">Nombre</label>
-                <input v-model="nombre" placeholder="Example" type="text" class="form-control" :class="{ 'is-invalid': errors.nombre }" required>
+                <input v-model="nombre" placeholder="Nombre" type="text" class="form-control" :class="{ 'is-invalid': errors.nombre }" required>
                 <div class="invalid-feedback">
                     {{ errors.nombre }}
                 </div>
             </div>
-            <div >
+            <div class="col-md-6">
                 <span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
                         <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"/>
@@ -69,7 +72,7 @@ const validacionFormulario = () => {
                     </svg>
                 </span>
                 <label class="form-label">Correo</label>
-                <input v-model="email" placeholder="Example@gmail.com" type="email" class="form-control" :class="{ 'is-invalid': errors.email }" required>
+                <input v-model="email" placeholder="Email" type="email" class="form-control" :class="{ 'is-invalid': errors.email }" required>
                 <div class="invalid-feedback">
                     {{ errors.email }}
                 </div>
@@ -81,13 +84,18 @@ const validacionFormulario = () => {
                     </svg>
                 </span>
                 <label class="form-label">Numero</label>
-                <input v-model="numero" placeholder="1234567890" type="text" class="form-control" :class="{ 'is-invalid': errors.numero }" required>
+                <input v-model="numero" placeholder="Teléfono" type="text" class="form-control" :class="{ 'is-invalid': errors.numero }" required>
                 <div class="invalid-feedback">
                     {{ errors.numero }}
                 </div>
             </div>
             <div class="col-12">
-                <button id="btn-submit" type="submit">Enviar</button>
+                <button id="btn-submit" type="submit">
+                    Enviar
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                        <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576zm6.787-8.201L1.591 6.602l4.339 2.76z"/>
+                    </svg>
+                </button>
             </div>
         </form>
     </div>
@@ -107,7 +115,7 @@ const validacionFormulario = () => {
 #btn-submit {
     margin-bottom: 2rem;
     padding: 1rem;
-    background-color: #6CED58;
+    background-color: #BBBDF6;
     border-radius: 5px;
     border: none;
     font-size: 18px;
@@ -115,12 +123,23 @@ const validacionFormulario = () => {
 }
 
 #btn-submit:hover {
-    background-color: #1BB516;
+    background-color: #9893DA;
     color: #FFFFFF;
 }
 
 #div-form {
     margin: 2rem;
 }
+
+.enviado {
+    font-size: 24px;
+    color: #3AB734;
+    font-weight: bold;
+}
+
+.form-label {
+    display: none;
+}
+
 
 </style>
