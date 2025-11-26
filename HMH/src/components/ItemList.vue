@@ -70,7 +70,7 @@ const usuariosFiltrados = computed(() => {
                 <tr>
                 <th scope="col">Nombre</th>
                 <th scope="col">Correo</th>
-                <th scope="col">Numero</th>
+                <th scope="col">Número</th>
                 </tr>
             </thead>
             <tbody class="table-group-divider">

@@ -63,6 +63,7 @@ nav {
     color: #fff !important;
     font-weight: bold;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: all 500ms ease-in-out 100ms;
 }
 
 </style>

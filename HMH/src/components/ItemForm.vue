@@ -125,12 +125,12 @@ const validacionFormulario = () => {
     border: none;
     font-size: 18px;
     transition: all 500ms ease-in-out 200ms;
-    box-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
 #btn-submit:hover {
     background-color: #9893DA;
     color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
 #div-form {
