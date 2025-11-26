@@ -1,5 +1,14 @@
 <script setup>
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
+const irLista = () => {
+    router.push('/')
+}
+
+const irFormulario = () => {
+    router.push('/formulario')
+}
 </script>
 
 <template>
@@ -11,8 +20,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Lista</a>
-                <a class="nav-link" href="#">Formulario</a>
+                <a class="nav-link" @click="irLista">Lista</a>
+                <a class="nav-link" @click="irFormulario">Formulario</a>
             </div>
             </div>
         </div>

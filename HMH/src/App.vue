@@ -1,11 +1,10 @@
 <script setup>
 import NavBar from './components/NavBar.vue';
-import ItemList from './components/ItemList.vue';
 </script>
 
 <template>
   <NavBar></NavBar>
-  <ItemList></ItemList>
+  <router-view></router-view> 
 </template>
 
 <style scoped>
